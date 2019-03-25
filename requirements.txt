@@ -1,0 +1,8 @@
+tensorflow
+keras
+numpy
+pprint
+flask
+json
+io
+requests
