@@ -6,3 +6,5 @@ flask
 json
 io
 requests
+dotenv
+sklearn
