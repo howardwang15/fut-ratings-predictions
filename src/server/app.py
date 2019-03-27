@@ -14,7 +14,7 @@ def test():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    stats = [90, 92, 84, 91, 40, 76, 3]
+    stats = [90, 98, 84, 91, 40, 76, 2]
     payload = {
         "instances": [
             {
@@ -27,5 +27,5 @@ def predict():
     model_path = api_url + "/v1/models/fut:predict"
     response = requests.post(model_path, json=payload)
     res = response.json()
-    prediction = res['predictions']
+    prediction = round(res['predictions'][0][0])
     return json.dumps(prediction)

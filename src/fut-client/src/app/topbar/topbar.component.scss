@@ -1,0 +1,35 @@
+#bar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: lightgray;
+
+    ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    li {
+        display: inline;  
+
+        a {
+            display: block;
+            text-decoration: none;
+            padding: 2vw;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: larger;
+        }
+
+        a:active {
+            background-color: gray;
+        }
+    
+        a:hover {
+            background-color: darkgray;
+        }
+    }
+}
