@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { AboutComponent } from './about/about.component';
 import { CardComponent } from './card/card.component';
+import { ErrorbarComponent } from './errorbar/errorbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopbarComponent,
     AboutComponent,
-    CardComponent
+    CardComponent,
+    ErrorbarComponent
   ],
   imports: [
     BrowserModule,

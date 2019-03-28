@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
+import { PredictionService } from '../prediction.service'
 
 @Component({
   selector: 'app-card',
@@ -18,20 +16,15 @@ export class CardComponent implements OnInit {
   position = ""
   stats = { }
 
-  private apiUrl = "http://localhost:5000/predict";
-  private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-
-  constructor(private http: HttpClient) { 
+  constructor(private predictionService: PredictionService) { 
 
   }
 
   ngOnInit() {
   }
 
-  predict(stats: Object): Observable<String> {
-    return this.http.post<String>(this.apiUrl, stats, this.httpOptions);
+  predict(stats: Object) {
+    this.predictionService.predict(stats);
   }
 
   onChange(e) {
@@ -40,14 +33,14 @@ export class CardComponent implements OnInit {
 
   submitInputs() {
     this.stats = {
-      pace: this.pace,
-      shot: this.shot,
-      pass: this.pass,
-      dribble: this.dribble,
-      defense: this.defense,
-      physical: this.physical,
-      position: this.position
+      Pace: this.pace,
+      Shot: this.shot,
+      Pass: this.pass,
+      Dribble: this.dribble,
+      Defense: this.defense,
+      Physical: this.physical,
+      Position: this.position
     }
-    this.predict(this.stats).subscribe(res => console.log(res));
+    this.predict(this.stats);
   }
 }

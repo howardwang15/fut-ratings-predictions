@@ -1,0 +1,29 @@
+.error {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFA4A4;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    height: 10vh;
+    width: 100%;
+    font-size: 4vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #5D5D5D;
+    animation: fadeIn 1s;
+
+    span {
+        text-align: center;
+    }
+}
+
+.close {
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
