@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="http://static.wefut.com/assets/images/fut19/gold1.png?19684" width="60px"/>
+    </div>
+    
+    <div class="col-md-2">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Pace</span>
+        </div>
+        <input type="text" class="form-control my" [(ngModel)]="pace" style="width:50px">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Shot</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="shot">
+      </div>
+
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Pass</span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)]="pass">
+      </div>
+
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Dribble</span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)]="dribble">
+      </div>
+
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Defense</span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)]="defense">
+      </div>
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Physical</span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)]="physical">
+      </div>
+
+      <button class="btn btn-primary" (click)="submitInputs()">Predict</button>
+    
+    </div>
+    
+    <div class="col-md-4">
+      <span>Card types goes here</span>
+    </div>
+  </div>
+</div>
