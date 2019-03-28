@@ -3,8 +3,8 @@ keras
 numpy
 pprint
 flask
-json
-io
 requests
 dotenv
 sklearn
+flask
+flask-cors
