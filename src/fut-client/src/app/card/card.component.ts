@@ -15,6 +15,8 @@ export class CardComponent implements OnInit {
   dribble = ""
   defense = ""
   physical = ""
+  position = ""
+  stats = { }
 
   private apiUrl = "http://localhost:5000/predict";
   private httpOptions = {
@@ -28,21 +30,24 @@ export class CardComponent implements OnInit {
   ngOnInit() {
   }
 
-  test(stats: Object): Observable<String> {
+  predict(stats: Object): Observable<String> {
     return this.http.post<String>(this.apiUrl, stats, this.httpOptions);
   }
 
+  onChange(e) {
+    this.position = e.target.value;
+  }
+
   submitInputs() {
-    let stats = {
+    this.stats = {
       pace: this.pace,
       shot: this.shot,
       pass: this.pass,
       dribble: this.dribble,
       defense: this.defense,
-      physical: this.physical
+      physical: this.physical,
+      position: this.position
     }
-    let response = this.test(stats).subscribe(res => console.log(res));
-    console.log(response);
+    this.predict(this.stats).subscribe(res => console.log(res));
   }
-
 }

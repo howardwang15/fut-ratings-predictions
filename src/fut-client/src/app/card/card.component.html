@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3">
       <img src="http://static.wefut.com/assets/images/fut19/gold1.png?19684" width="60px"/>
     </div>
     
-    <div class="col-md-2">
+    <div class="col-md-3">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">Pace</span>
@@ -47,10 +47,33 @@
       </div>
 
       <button class="btn btn-primary" (click)="submitInputs()">Predict</button>
-    
+    </div>
+
+    <div class="col-md-3">
+        <div class="form-group">
+            <select class="form-control" id="sel1" (change)="onChange($event)">
+              <option></option>
+              <option>ST</option>
+              <option>CF</option>
+              <option>LF</option>
+              <option>LW</option>
+              <option>LM</option>
+              <option>RF</option>
+              <option>RW</option>
+              <option>RM</option>
+              <option>CAM</option>
+              <option>CM</option>
+              <option>CDM</option>
+              <option>LB</option>
+              <option>LWB</option>
+              <option>RB</option>
+              <option>RWB</option>
+              <option>CB</option>
+            </select>
+          </div>
     </div>
     
-    <div class="col-md-4">
+    <div class="col-md-3">
       <span>Card types goes here</span>
     </div>
   </div>
