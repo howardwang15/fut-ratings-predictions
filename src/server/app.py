@@ -53,18 +53,18 @@ def predict():
 
 def sanitize(json):
     for stat, rating in json.items():
-        if stat != 'position':
+        if stat != 'Position':
             try:
                 rating = int(rating)
                 if rating < 0 or rating > 99:
-                    return (stat + " needs to be a number between 0 and 99", None)
+                    return ("Error: " + stat + " needs to be a number between 0 and 99", None)
             except ValueError:
-                return (stat + " needs to be an integer", None)
+                return ("Error: " + stat + " needs to be an integer", None)
     
-    if not json["position"]:
-        return ("Please choose a position for the player", None)
+    if not json["Position"]:
+        return ("Error: Please choose a position for the player", None)
 
-    position = json["position"]
+    position = json["Position"]
     position_num = None
     if position == "ST" or position == "CF":
         position_num = 1
@@ -81,5 +81,5 @@ def sanitize(json):
     elif position == "LB" or position == "LWB" or position == "RB" or position == "RWB":
         position_num = 7
 
-    stats = [int(json["pace"]), int(json["shot"]), int(json["pass"]), int(json["dribble"]), int(json["defense"]), int(json["physical"]), position_num]
+    stats = [int(json["Pace"]), int(json["Shot"]), int(json["Pass"]), int(json["Dribble"]), int(json["Defense"]), int(json["Physical"]), position_num]
     return (None, stats)
