@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PredictionService } from '../prediction.service'
+import { PredictionService } from '../prediction.service';
+import { CardService } from '../card.service';
+import { Constants } from '../config';
 
 @Component({
   selector: 'app-card',
@@ -14,17 +16,28 @@ export class CardComponent implements OnInit {
   defense = ""
   physical = ""
   position = ""
+  prediction: Number;
+  cardType: string;
   stats = { }
 
-  constructor(private predictionService: PredictionService) { 
+  constructor(private predictionService: PredictionService, private cardService: CardService) { 
 
   }
 
   ngOnInit() {
+    this.predictionService.currentPrediction.subscribe(currentPrediction => this.prediction = currentPrediction);
+    this.cardService.cardType.subscribe(currentCardType => this.cardType = currentCardType);
   }
 
   predict(stats: Object) {
     this.predictionService.predict(stats);
+  }
+
+  updateCardType(e) {
+    if (!e.target.value)
+      return;
+    
+    this.cardService.updateCardType(e.target.value);
   }
 
   onChange(e) {

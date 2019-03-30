@@ -35,6 +35,7 @@ def predict():
     error, stats = sanitize(data)
     if error:
         return json.dumps({"error": error})
+
     payload = {
         "instances": [
             {
@@ -48,6 +49,8 @@ def predict():
     response = requests.post(model_path, json=payload)
     res = response.json()
     prediction = round(res['predictions'][0][0])
+    if prediction > 99:
+        prediction = 99
     return json.dumps({"error": None, "prediction": prediction})
 
 

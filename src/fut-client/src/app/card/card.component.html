@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <img src="http://static.wefut.com/assets/images/fut19/gold1.png?19684" width="80%"/>
+      <img src="{{cardType}}" width="80%"/>
+      {{prediction}}
     </div>
     
     <div class="col-md-3">
@@ -46,36 +47,147 @@
           <input type="text" class="form-control" [(ngModel)]="physical">
       </div>
 
-    </div>
-
-    <div class="col-md-3">
-        <div class="form-group">
-            <select class="form-control" id="sel1" (change)="onChange($event)">
-              <option></option>
-              <option>ST</option>
-              <option>CF</option>
-              <option>LF</option>
-              <option>LW</option>
-              <option>LM</option>
-              <option>RF</option>
-              <option>RW</option>
-              <option>RM</option>
-              <option>CAM</option>
-              <option>CM</option>
-              <option>CDM</option>
-              <option>LB</option>
-              <option>LWB</option>
-              <option>RB</option>
-              <option>RWB</option>
-              <option>CB</option>
-            </select>
-          </div>
-          <button class="btn btn-primary" (click)="submitInputs()">Predict</button>
+      <div class="form-group">
+          <select class="form-control" id="sel1" (change)="onChange($event)">
+            <option></option>
+            <option>ST</option>
+            <option>CF</option>
+            <option>LF</option>
+            <option>LW</option>
+            <option>LM</option>
+            <option>RF</option>
+            <option>RW</option>
+            <option>RM</option>
+            <option>CAM</option>
+            <option>CM</option>
+            <option>CDM</option>
+            <option>LB</option>
+            <option>LWB</option>
+            <option>RB</option>
+            <option>RWB</option>
+            <option>CB</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" (click)="submitInputs()">Predict</button>
     </div>
 
     
-    <div class="col-md-3">
-      <span>Card types goes here</span>
+    <div class="col-md-3" (click)="updateCardType($event)">
+      <label class="radio">
+        <input type="radio" name="type" value="prime-icon">
+        <span>Prime Icon</span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="type" value="base-icon">
+        <span>Base Icon</span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="type" value="toty">
+        <span>TOTY</span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="type" value="hero">
+        <span>Hero</span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="type" value="carniball">
+        <span>Carniball</span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="type" value="non-rare-gold">
+        <span>Non-rare Gold</span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="type" value="rare-gold">
+        <span>Rare Gold</span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="type" value="if-gold">
+        <span>Inform Gold</span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="type" value="non-rare-silver">
+        <span>Non-rare Silver</span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="type" value="rare-silver">
+        <span>Rare Silver</span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="type" value="if-silver">
+        <span>Inform Silver</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="non-rare-bronze">
+        <span>Non-rare Bronze</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="rare-bronze">
+        <span>Rare Bronze</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="if-bronze">
+        <span>Inform Bronze</span>
+      </label>
+    </div>
+
+    <div class="col-md-3" (click)="updateCardType($event)">
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="scream">
+        <span>Scream</span>
+      </label>
+      <label class="radio">
+        <input type="radio" name="type" value="poty">
+        <span>POTY</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="eplpotm">
+        <span>Premier League POTM</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="bpotm">
+        <span>Bundesliga POTM</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="dmotm">
+        <span>Domestic MOTM</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="clmotm">
+        <span>Champions League MOTM</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="elmotm">
+        <span>Europa League MOTM</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="flashback">
+        <span>Flashback</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="birthday">
+        <span>FUT Birthday</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="future">
+        <span>Future Stars</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="futmas">
+        <span>Futmas</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="headliner">
+        <span>Headliner</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="ones-to-watch">
+        <span>Ones to Watch</span>
+      </label>
+      <label class="radio" name="type">
+        <input type="radio" name="type" value="uefa">
+        <span>UEFA Live</span>
+      </label>
     </div>
   </div>
 </div>
