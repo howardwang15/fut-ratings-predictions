@@ -4,7 +4,8 @@ numpy
 pprint
 flask
 requests
-dotenv
+python-dotenv
 sklearn
 flask
 flask-cors
+matplotlib
